@@ -5,11 +5,12 @@ import { Address } from "~~/components/scaffold-eth";
 import { useScaffoldEventHistory } from "~~/hooks/scaffold-eth";
 
 const Transfers: NextPage = () => {
+  const blocknumber = 6898294n;
   const { data: transferEvents, isLoading } = useScaffoldEventHistory({
     contractName: "YourCollectible",
     eventName: "Transfer",
     // Specify the starting block number from which to read events, this is a bigint.
-    fromBlock: 0n,
+    fromBlock: blocknumber - 10n,
   });
 
   if (isLoading)
