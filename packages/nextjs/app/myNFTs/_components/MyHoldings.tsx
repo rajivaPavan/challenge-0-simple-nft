@@ -7,6 +7,7 @@ import { useScaffoldContract, useScaffoldReadContract } from "~~/hooks/scaffold-
 import { notification } from "~~/utils/scaffold-eth";
 import { getMetadataFromIPFS } from "~~/utils/simpleNFT/ipfs-fetch";
 import { NFTMetaData } from "~~/utils/simpleNFT/nftsMetadata";
+import Link from "next/link";
 
 export interface Collectible extends Partial<NFTMetaData> {
   id: number;
@@ -82,8 +83,11 @@ export const MyHoldings = () => {
   return (
     <>
       {myAllCollectibles.length === 0 ? (
-        <div className="flex justify-center items-center mt-10">
+        <div className="flex flex-col gap-3 justify-center items-center mt-10">
           <div className="text-2xl text-primary-content">No NFTs found</div>
+          <Link  className="btn btn-secondary" href={"/artworks"}>
+            Go Mint NFTs 🫡 
+          </Link>
         </div>
       ) : (
         <div className="flex flex-wrap gap-4 my-8 px-5 justify-center">
