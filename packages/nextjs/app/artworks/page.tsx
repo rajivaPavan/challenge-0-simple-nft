@@ -1,6 +1,5 @@
 import { NextPage } from "next";
-
-import { Artworks } from "../myNFTs/_components";
+import { Artworks } from "./_components";
 
 const ArtworksPage: NextPage = () => {
 
